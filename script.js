@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         function clicker (){
             let container = document.querySelector('.container'),
                 counter = -1,
-                storage = {};
+                storage = [];
 
             container.addEventListener('click', (event) =>{
                 let target = event.target,              
@@ -82,10 +82,9 @@ document.addEventListener('DOMContentLoaded', () =>{
                             
                 if (target.classList != 'coll') return;
 
-                if(JSON.stringify(storage[`text ${counter-1}`]) !=  JSON.stringify(storage[`text ${counter-2}`])){
+                if (storage[`text ${counter-1}`] != storage[`text ${counter-2}`]){
                     storage[counter-1].classList.add('hiden');
-                }  
-
+                }
                 currentCard.classList.remove('hiden');           
             
                 storage [counter] = currentCard;
@@ -97,9 +96,9 @@ document.addEventListener('DOMContentLoaded', () =>{
                     storage[counter-2].classList.remove('hiden');
                 }      
             });
-        } 
-           
-       function restart(){
+        }
+        
+        function restart(){
         shuffle();
         let cards = document.querySelectorAll('p');
             for (let i = 0; i < cards.length; i++){
@@ -112,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
   
     
-    btn.addEventListener('click',function(){
+        btn.addEventListener('click',function(){
         restart();
        
         });
