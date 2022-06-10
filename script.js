@@ -107,15 +107,12 @@ document.addEventListener('DOMContentLoaded', () =>{
         }
        disp(arr);
        console.log(arr);
-        }
+       }
 
-  
-    
-        btn.addEventListener('click',function(){
-        restart();
+       btn.addEventListener('click',function(){
+       restart();
        
-        });
-    
+       });    
 });
 
 
